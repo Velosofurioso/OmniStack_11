@@ -1,5 +1,5 @@
 const express = require('express');
-
+const {errors} = require('celebrate');
 const routes = require('./routes'); // IMPORTA AS ROTAS CRIADAS NO ARQUIVO ROUTES
 const cors = require('cors');
 
@@ -11,5 +11,7 @@ app.use(express.json());
 
 app.use(routes);
 
+app.use(errors());
 
-app.listen(3333);// localhost:3333
+
+module.exports = app;
